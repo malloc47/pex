@@ -25,6 +25,8 @@ except ImportError:
 
 try:
   import requests
+  if requests.__version__ < "1.2.1":
+    raise ImportError('Requests library not new enough (> 1.2.0)')
 except ImportError:
   requests = None
 
